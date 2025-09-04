@@ -1,97 +1,78 @@
+# CV data for WeiJin Huang (黄韦锦)
+
 - title: General Information
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: WeiJin Huang (黄韦锦)
+    - name: Email
+      value: huangwj235@mail2.sysu.edu.cn
+    - name: Website
+      value: https://scutvk.cn/
+    - name: Location
+      value: Guangzhou, Guangdong, China
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D., Computer Science and Technology
+      institution: Sun Yat-sen University (SYSU), Guangzhou, China
+      year: 2024.09 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - title: Specialization
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - Humanoid Learning
+            - Video Action Understanding
+    - title: B.E., Network Engineering
+      institution: South China University of Technology (SCUT), Guangzhou, China
+      year: 2020.09 - 2024.07
       description:
-        - Description 1.
-        - Description 2.
+        - Average grade ranking 3/66
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+    - title: Algorithm Engineer Intern
+      institution: China Telecom — Tianyi Digital Life Technology
+      year: 2023.03 - 2023.05
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: AI-based automated grading system using OCR
+      institution: National Undergraduate Innovation & Entrepreneurship Training Program
+      description:
+        - CV + YOLO for answer-area detection and segmentation.
+        - OCR/layout/AES for automated grading.
+        - Repository: https://github.com/vkgo/OCRAutoScore
+    - title: Intent classification for financial customer service (few-shot)
+      description:
+        - Train on small-sample data for robust intent recognition in financial scenarios.
+    - title: K12 English composition automatic scoring
+      description:
+        - Deep learning model to automatically score English compositions for K12 education.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2022
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Kaggle — H&M Personalized Fashion Recommendations, Silver (85/2952)
+        - National Scholarship (1/66)
+        - Tencent Scholarship — First Class (1/66)
+    - year: 2021
       items:
-        - Max Planck Medal
+        - Kaggle — G2Net Gravitational Wave Detection, Silver (57/1219)
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Humanoid Learning
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Embodied intelligence, control, imitation learning
+    - title: Video Action Understanding
       items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+        - Temporal action, video representation learning
+    - title: Multi-Modal Learning
+      items:
+        - Computer Vision, NLP
