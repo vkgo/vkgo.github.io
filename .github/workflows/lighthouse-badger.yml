@@ -16,7 +16,7 @@ name: "Lighthouse Badger"
 env:
   URLS: https://alshedivat.github.io/al-folio/
   # If any of the following env is blank, a default value is used instead
-  REPO_BRANCH: "${{ github.repository }} master" # target repository & branch e.g. 'dummy/mytargetrepo main'
+  REPO_BRANCH: "${{ github.repository }} ${{ github.ref_name }}" # target repository & branch
   MOBILE_LIGHTHOUSE_PARAMS: "--only-categories=performance,accessibility,best-practices,seo --throttling.cpuSlowdownMultiplier=2"
   DESKTOP_LIGHTHOUSE_PARAMS: "--only-categories=performance,accessibility,best-practices,seo --preset=desktop --throttling.cpuSlowdownMultiplier=1"
 
@@ -32,6 +32,9 @@ on:
 ########################################################################
 # THAT'S IT; YOU DON'T HAVE TO DEFINE ANYTHING IN THE FOLLOWING
 ########################################################################
+
+permissions:
+  contents: write
 
 jobs:
   lighthouse-badger-easy:
@@ -49,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ env.REPOSITORY }}
-          token: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ env.BRANCH }}
       - uses: actions/checkout@v4
         with:

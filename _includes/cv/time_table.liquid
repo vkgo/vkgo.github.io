@@ -2,56 +2,73 @@
   {% for content in entry.contents %}
     <li class="list-group-item">
       <div class="row">
-        {% if content.year %}
-          <div class="col-xs-2 cl-sm-2 col-md-2 text-center" style="width: 75px">
-            <table class="table-cv">
-              <tbody>
-                <tr>
-                  <td>
+        {% assign _entry_title = entry.title | downcase | strip %}
+        <div class="col-xs-2 cl-sm-2 col-md-2 text-center" style="width: {% if _entry_title == 'education' %}100px{% else %}75px{% endif %}">
+          <table class="table-cv">
+            <tbody>
+              <tr>
+                <td style="text-align: center; vertical-align: middle;">
+                  {% if _entry_title == 'education' and content.logo %}
+                    <img
+                      src="{% if content.logo contains '://' %}{{ content.logo }}{% else %}{{ content.logo | relative_url }}{% endif %}"
+                      alt="{{ content.institution | default: content.title }} logo"
+                      style="height: 80px; width: 80px; object-fit: contain; border-radius: 6px;"
+                    />
+                  {% elsif content.year %}
                     <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
                       {{- content.year -}}
                     </span>
+                  {% endif %}
+                </td>
+              </tr>
+              {% if content.location and not (_entry_title == 'education' and content.logo) %}
+                <tr>
+                  <td>
+                    <p class="location">
+                      <i class="fa-solid fa-location-dot iconlocation"></i>
+                      {{ content.location }}
+                    </p>
                   </td>
                 </tr>
-                {% if content.location %}
-                  <tr>
-                    <td>
-                      <p class="location">
-                        <i class="fa-solid fa-location-dot iconlocation"></i>
-                        {{ content.location }}
-                      </p>
-                    </td>
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
-          </div>
-        {% endif %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          {% if content.title %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
-          {% endif %}
-          {% if content.department or content.institution %}
-            <table class="table-cv ml-1 ml-md-4 institution">
-              <tbody>
-                {% if content.institution %}
-                  <tr>
-                    <td style="vertical-align: top; text-align: center" class="institution">
-                      <i class="fa-solid fa-building-columns iconinstitution"></i>
-                    </td>
-                    <td class="institution">{{ content.institution }}</td>
-                  </tr>
-                {% endif %}
-                {% if content.department %}
-                  <tr>
-                    <td style="vertical-align: top; text-align: center" class="department">
-                      <i class="fa-regular fa-circle-dot icondepartment"></i>
-                    </td>
-                    <td class="department">{{ content.department }}</td>
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
+          {% if _entry_title == 'education' %}
+            {% if content.institution %}
+              <h6 class="ml-1 ml-md-4 font-weight-bold mb-1">{{ content.institution }}</h6>
+            {% endif %}
+            {% if content.title %}
+              <div class="ml-1 ml-md-4 mb-1">{{ content.title }}</div>
+            {% endif %}
+            {% if content.year %}
+              <div class="ml-1 ml-md-4"><small class="text-muted">{{ content.year }}</small></div>
+            {% endif %}
+          {% else %}
+            {% if content.title %}
+              <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
+            {% endif %}
+            {% if content.department or content.institution %}
+              <table class="table-cv ml-1 ml-md-4 institution">
+                <tbody>
+                  {% if content.institution %}
+                    <tr>
+                      <td style="vertical-align: top; text-align: center" class="institution"><i class="fa-solid fa-building-columns iconinstitution"></i></td>
+                      <td class="institution">{{ content.institution }}</td>
+                    </tr>
+                  {% endif %}
+                  {% if content.department %}
+                    <tr>
+                      <td style="vertical-align: top; text-align: center" class="department">
+                        <i class="fa-regular fa-circle-dot icondepartment"></i>
+                      </td>
+                      <td class="department">{{ content.department }}</td>
+                    </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            {% endif %}
           {% endif %}
           {% if content.maindescription %}
             <div class="ml-1 ml-md-4">{{ content.maindescription }}</div>
