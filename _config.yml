@@ -2,8 +2,8 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: WeiJin Huang # the website title (if blank, full name will be used instead)
-first_name: WeiJin
+title: blank # the website title (if blank, full name will be used instead)
+first_name: Wei-Jin
 middle_name: 
 last_name: Huang
 contact_note: >
@@ -165,7 +165,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_scripts"]
+include: ["_pages", "_scripts", ".well-known"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -261,7 +261,7 @@ display_categories: ["external-services"] # these categories will be displayed o
 
 scholar:
   last_name: [Huang]
-  first_name: [WeiJin, W.]
+  first_name: [Wei-Jin, WeiJin, W.]
 
   style: apa
   locale: en

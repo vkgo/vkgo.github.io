@@ -38,6 +38,27 @@ body.sticky-bottom-footer {
   }
 }
 
+// Mobile-specific adjustments
+@media (max-width: 575.98px) {
+  // Ensure the profile block doesn't float on small screens
+  .profile.float-left,
+  .profile.float-right {
+    float: none !important;
+  }
+
+  // Make the profile block full-width; control the image size instead
+  .profile {
+    width: 100% !important;
+
+    img {
+      width: 40% !important; // shrink profile image to 40% on small screens
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+}
+
 // TODO: redefine content layout.
 
 /******************************************************************************
