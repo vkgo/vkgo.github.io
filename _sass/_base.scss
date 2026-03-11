@@ -729,17 +729,30 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
 
-      .preview {
+      .publication-media {
+        margin-bottom: 0.5rem;
+
+        figure {
+          margin: 0;
+        }
+
+        .preview {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
       }
 
-      .abbr {
-        margin-bottom: 0.5rem;
+      .publication-venue {
+        margin: 0.35rem 0 0.5rem;
 
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
           color: var(--global-card-bg-color) !important;
+          font-size: 0.8rem;
+          line-height: 1.2;
+          padding: 0.35rem 0.65rem;
 
           a {
             color: white;
