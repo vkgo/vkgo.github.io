@@ -4,8 +4,8 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 3
-cv_pdf: example_pdf.pdf # you can also use external links here
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+cv_pdf: wei_jin_huang_cv.pdf # you can also use external links here
+description: Download the latest PDF resume.
 toc:
   sidebar: left
 ---
