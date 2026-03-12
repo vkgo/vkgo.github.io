@@ -82,6 +82,7 @@
         {% assign author_is_self = false %}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- assign author_bib_name = author_last_name | append: ', ' | append: author.first -%}
         {% if site.scholar.last_name contains author_last_name %}
           {% if site.scholar.first_name contains author.first %}
             {% assign author_is_self = true %}
@@ -118,6 +119,9 @@
             {{ author_last_html -}}
           {% endif %}
         {%- endif -%}
+        {% if entry.cofirst and entry.cofirst contains author_bib_name %}
+          <span class="author-note">(Co-First)</span>
+        {% endif %}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 

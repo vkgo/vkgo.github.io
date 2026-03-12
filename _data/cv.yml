@@ -1,14 +1,14 @@
-# CV data for WeiJin Huang (黄韦锦)
+# CV data for Wei-Jin Huang (黄韦锦)
 
 - title: General Information
   type: map
   contents:
     - name: Full Name
-      value: WeiJin Huang (黄韦锦)
+      value: Wei-Jin Huang (黄韦锦)
     - name: Email
       value: huangwj235@mail2.sysu.edu.cn
     - name: Website
-      value: https://scutvk.cn/
+      value: https://vkgo.github.io/
     - name: Location
       value: Guangzhou, Guangdong, China
 
@@ -35,7 +35,7 @@
   type: time_table
   contents:
     - title: Algorithm Engineer Intern
-      institution: China Telecom — Tianyi Digital Life Technology
+      institution: China Telecom
       year: 2023.03 - 2023.05
 
 - title: Projects
@@ -57,6 +57,9 @@
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2024
+      items:
+        - President Scholarship, Sun Yat-sen University (top 5%)
     - year: 2022
       items:
         - Kaggle — H&M Personalized Fashion Recommendations, Silver (85/2952)
@@ -71,10 +74,10 @@
   contents:
     - title: Humanoid Learning
       items:
-        - Embodied intelligence, control, imitation learning
-    - title: Video Action Understanding
+        - Embodied intelligence, whole-body control, imitation learning
+        - Human-humanoid interaction
+    - title: Video Understanding
       items:
-        - Temporal action, video representation learning
-    - title: Multi-Modal Learning
-      items:
-        - Computer Vision, NLP
+        - Action recognition
+        - Temporal action understanding
+        - Video representation learning
