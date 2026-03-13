@@ -281,7 +281,7 @@ scholar:
   details_link: Details
 
   query: "@*"
-  sort_by: year
+  sort_by: sortkey
   order: descending
   group_by: year
   group_order: descending
@@ -316,6 +316,7 @@ filtered_bibtex_keywords:
     poster,
     preview,
     selected,
+    sortkey,
     slides,
     supp,
     video,
