@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations" was accepted to CVPR 2026.
+Our paper "Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations" was accepted to CVPR 2026.
