@@ -234,9 +234,6 @@ def build_pdf(target: Path, photo: Path) -> None:
     p(c, '<font color="#d84315"><b>2021</b></font>', BODY_X, 756.41, BODY_W, STYLES["body"])
     p(c, "- Kaggle - G2Net Gravitational Wave Detection, Silver (57/1219)", BODY_X, 767.24, BODY_W, STYLES["body"])
 
-    c.setFont("Helvetica", 8.5)
-    c.setFillColor(MUTED)
-    c.drawRightString(557.0, H - 818.0, "Page 1")
     c.showPage()
     c.save()
 
