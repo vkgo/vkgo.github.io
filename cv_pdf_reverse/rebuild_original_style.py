@@ -35,6 +35,19 @@ BLUE = colors.HexColor("#2563eb")
 ORANGE = colors.HexColor("#d84315")
 
 
+LINKS = {
+    "email": "mailto:huangwj235@mail2.sysu.edu.cn",
+    "website": "https://vkgo.github.io/",
+    "scholar": "https://scholar.google.com/citations?user=jMrU_JYAAAAJ",
+    "github": "https://github.com/vkgo",
+    "kaggle": "https://www.kaggle.com/carmencita",
+    "pair": "https://cvpr.thecvf.com/virtual/2026/poster/37452",
+    "modeling": "https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Modeling_Multiple_Normal_Action_Representations_for_Error_Detection_in_Procedural_CVPR_2025_paper.html",
+    "genpriv": "https://openaccess.thecvf.com/content/ICCV2025/html/Xia_Less_Static_More_Private_Towards_Transferable_Privacy-Preserving_Action_Recognition_by_ICCV_2025_paper.html",
+    "egoexo": "https://doi.org/10.1007/978-3-031-72661-3_21",
+}
+
+
 STYLES = {
     "body": ParagraphStyle(
         "body",
@@ -97,11 +110,40 @@ def ensure_headshot(source_pdf: Path, output_dir: Path) -> Path:
     return photo
 
 
-def p(c: canvas.Canvas, text: str, x: float, y_top: float, width: float, style: ParagraphStyle) -> float:
+def add_text_link(
+    c: canvas.Canvas,
+    url: str,
+    text: str,
+    x: float,
+    y_from_top: float,
+    font_name: str = "Helvetica",
+    font_size: float = 7.5,
+) -> None:
+    text_width = c.stringWidth(text, font_name, font_size)
+    c.linkURL(
+        url,
+        (x, H - y_from_top - 2.0, x + text_width, H - y_from_top + font_size + 1.0),
+        relative=0,
+        thickness=0,
+    )
+
+
+def p(
+    c: canvas.Canvas,
+    text: str,
+    x: float,
+    y_top: float,
+    width: float,
+    style: ParagraphStyle,
+    url: str | None = None,
+) -> float:
     para = Paragraph(text, style)
     _, h = para.wrap(width, 500)
     adjusted_top = y_top - (style.fontSize * 0.282)
-    para.drawOn(c, x, H - adjusted_top - h)
+    y = H - adjusted_top - h
+    para.drawOn(c, x, y)
+    if url:
+        c.linkURL(url, (x, y, x + width, y + h), relative=0, thickness=0)
     return y_top + h
 
 
@@ -126,23 +168,28 @@ def draw_header(c: canvas.Canvas, photo: Path) -> None:
     c.drawString(HEADER_X, H - 86.2, "Email: ")
     c.setFillColor(BLUE)
     c.drawString(72.8, H - 86.2, "huangwj235@mail2.sysu.edu.cn")
+    add_text_link(c, LINKS["email"], "huangwj235@mail2.sysu.edu.cn", 72.8, 86.2)
     c.setFillColor(MUTED)
     c.drawString(179.85, H - 86.2, " | Website: ")
     c.setFillColor(BLUE)
     c.drawString(222.5, H - 86.2, "vkgo.github.io")
+    add_text_link(c, LINKS["website"], "vkgo.github.io", 222.5, 86.2)
 
     c.setFillColor(MUTED)
     c.drawString(HEADER_X, H - 95.4, "Scholar: ")
     c.setFillColor(BLUE)
     c.drawString(76.0, H - 95.4, "Google Scholar")
+    add_text_link(c, LINKS["scholar"], "Google Scholar", 76.0, 95.4)
     c.setFillColor(MUTED)
     c.drawString(130.0, H - 95.4, " | GitHub: ")
     c.setFillColor(BLUE)
     c.drawString(162.0, H - 95.4, "github.com/vkgo")
+    add_text_link(c, LINKS["github"], "github.com/vkgo", 162.0, 95.4)
     c.setFillColor(MUTED)
     c.drawString(218.0, H - 95.4, " | Kaggle: ")
     c.setFillColor(BLUE)
     c.drawString(250.0, H - 95.4, "carmencita")
+    add_text_link(c, LINKS["kaggle"], "carmencita", 250.0, 95.4)
 
     c.drawImage(str(photo), 456, H - 126, width=80, height=106.7, preserveAspectRatio=True, mask="auto")
 
@@ -189,6 +236,7 @@ def build_pdf(target: Path, photo: Path) -> None:
             "Enabling humanoid robots to physically interact with humans is a critical frontier, but progress is hindered by the scarcity of high-quality human-humanoid interaction data. "
             "While leveraging abundant human-human interaction data presents a scalable alternative, we show that standard retargeting breaks essential contacts. We address this with PAIR and D-STAR for synchronized whole-body interaction behaviors.",
             (303.43, 313.95, 323.02, 332.66),
+            LINKS["pair"],
         ),
         (
             "Modeling Multiple Normal Action Representations for Error Detection in Procedural Tasks",
@@ -197,6 +245,7 @@ def build_pdf(target: Path, photo: Path) -> None:
             "Error detection in procedural activities is essential for consistent and correct outcomes in AR-assisted and robotic systems. Existing methods often focus on temporal ordering errors or rely on static prototypes to represent normal actions. "
             "We propose an Adaptive Multiple Normal Action Representation framework that predicts all valid next actions and reconstructs their corresponding normal action representations for comparison with the ongoing action.",
             (376.27, 386.80, 395.86, 405.51),
+            LINKS["modeling"],
         ),
         (
             "Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning",
@@ -205,6 +254,7 @@ def build_pdf(target: Path, photo: Path) -> None:
             "This work focuses on privacy-preserving action recognition, which aims to protect individual privacy in action videos without compromising recognition performance. Existing methods still struggle with video domain shifts. "
             "We propose GenPriv, a transferable framework that decouples static and dynamic video features and removes privacy-sensitive content from static action features.",
             (449.12, 470.64, 479.71, 489.35),
+            LINKS["genpriv"],
         ),
         (
             "Egoexo-fitness: Towards egocentric and exocentric full-body action understanding",
@@ -212,11 +262,12 @@ def build_pdf(target: Path, photo: Path) -> None:
             '<font color="#d84315"><b>ECCV 2024</b></font> - European Conference on Computer Vision',
             "We present EgoExo-Fitness, a new full-body action understanding dataset featuring fitness videos recorded from synchronized egocentric and fixed exocentric cameras. Compared with existing datasets, EgoExo-Fitness not only contains first-person videos, but also provides rich annotations, including two-level temporal boundaries, natural language comments, and action quality scores.",
             (522.56, 533.08, 542.15, 551.79),
+            LINKS["egoexo"],
         ),
     ]
-    for title, authors, venue, abstract, ys in pubs:
+    for title, authors, venue, abstract, ys, url in pubs:
         title_y, author_y, venue_y, abstract_y = ys
-        p(c, f"<b>{title}</b>", BODY_X, title_y, BODY_W, STYLES["title"])
+        p(c, f"<b>{title}</b>", BODY_X, title_y, BODY_W, STYLES["title"], url=url)
         p(c, authors, BODY_X, author_y, BODY_W, STYLES["small"])
         p(c, venue, BODY_X, venue_y, BODY_W, STYLES["body"])
         p(c, f'<font color="#2563eb">Abstract:</font> {abstract}', BODY_X, abstract_y, BODY_W, STYLES["body"])
