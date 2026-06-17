@@ -1,0 +1,9 @@
+# Generated build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+wei_jin_huang_cv.pdf
+
+# Licensed font (Helvetica Neue) -- kept local, not redistributed
+fonts/

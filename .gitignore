@@ -11,3 +11,7 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Local-only CV assets and generated PDFs.
+contact/
+cv_pdf_local/
