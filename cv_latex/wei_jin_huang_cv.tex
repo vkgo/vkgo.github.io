@@ -2,7 +2,7 @@
 % Build: xelatex wei_jin_huang_cv.tex
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[a4paper,top=1.0cm,bottom=0.8cm,left=1.45cm,right=1.45cm]{geometry}
+\usepackage[a4paper,top=0.8cm,bottom=0.5cm,left=1.45cm,right=1.45cm]{geometry}
 \usepackage{fontspec}
 \usepackage{microtype}
 \usepackage{xcolor}
@@ -33,7 +33,7 @@
 \hypersetup{colorlinks=true,urlcolor=primary,linkcolor=primary}
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
-\linespread{0.93}
+\linespread{0.91}
 
 % ---- helpers ---------------------------------------------------------------
 % section heading: magenta bar + violet title + thin rule
@@ -41,7 +41,7 @@
   \vspace{2pt}\par\noindent
   {\color{accent}\rule[-1pt]{3.2pt}{12pt}}\hspace{6pt}%
   {\bfseries\large\color{primary}#1}\par
-  \vspace{2.5pt}{\color{rule}\hrule height 1pt}\vspace{4pt}}
+  \vspace{2.5pt}{\color{rule}\hrule height 1pt}\vspace{3.5pt}}
 
 \newcommand{\dt}[1]{{\bfseries\color{accent}\footnotesize #1}}
 \newcommand{\me}[1]{{\bfseries\color{primary}#1}}        % highlight my name
@@ -58,11 +58,17 @@
   \noindent
   \begin{minipage}[t]{1.55em}\vspace{1.5pt}\badge{#1}\end{minipage}\hspace{0.6em}%
   \begin{minipage}[t]{\dimexpr\linewidth-2.15em\relax}\vspace{0pt}
-    \href{#6}{\bfseries\color{ink} #2}\par
+    \if\relax\detokenize{#6}\relax
+      {\bfseries\color{ink} #2}\par
+    \else
+      \href{#6}{\bfseries\color{ink} #2}\par
+    \fi
     {\footnotesize\color{muted}#3}\par
     \vspace{0.5pt}#4\par
-    \vspace{1pt}{\color{ink}{\bfseries\color{primary}Abstract:} #5}\par
-  \end{minipage}\par\vspace{2.5pt}}
+    \if\relax\detokenize{#5}\relax\else
+      \vspace{1pt}{\color{ink}{\bfseries\color{primary}Abstract:} #5}\par
+    \fi
+  \end{minipage}\par\vspace{1.5pt}}
 
 \begin{document}
 \RaggedRight
@@ -94,7 +100,7 @@
 I am a Ph.D.\ student at Sun Yat-sen University, advised by Prof.\ Wei-Shi Zheng, working on humanoid
 learning and video action understanding. My research builds physically grounded systems that learn
 whole-body human--humanoid interaction from human demonstrations and that understand fine-grained human
-actions in video. I have published as (co-)first author at CVPR, ICCV, and ECCV, and I aim to advance
+actions in video. I have published as (co-)first author at CVPR, ICCV, ECCV, and ACM MM, and I aim to advance
 embodied intelligence through rigorous, impactful research.
 
 % ============================ EDUCATION ====================================
@@ -107,7 +113,14 @@ embodied intelligence through rigorous, impactful research.
 % ============================ PUBLICATIONS =================================
 \cvsection{Selected Publications}
 \pub
-  {1}{Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations}
+  {1}{ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance}
+  {\me{Wei-Jin Huang}, Jianhong Fan, Hao Huang, Zhi-Wei Xia, Jun-Yi Deng, Yuan-Ming Li, Kun-Yu Lin, Wei-Shi Zheng}
+  {\venue{ACM MM 2026}{- ACM International Conference on Multimedia}}
+  {}
+  {}
+
+\pub
+  {2}{Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations}
   {\me{Wei-Jin Huang}, Yue-Yi Zhang, Yi-Lin Wei, Zhi-Wei Xia, Juantao Tan, Yuan-Ming Li, Zhilin Zhao, Wei-Shi Zheng}
   {\venue{CVPR 2026}{- Proceedings of the Computer Vision and Pattern Recognition Conference}}
   {Physical human-humanoid interaction is hindered by scarce high-quality data. We leverage abundant human-human
@@ -117,7 +130,7 @@ embodied intelligence through rigorous, impactful research.
   {https://cvpr.thecvf.com/virtual/2026/poster/37452}
 
 \pub
-  {2}{Modeling Multiple Normal Action Representations for Error Detection in Procedural Tasks}
+  {3}{Modeling Multiple Normal Action Representations for Error Detection in Procedural Tasks}
   {\me{Wei-Jin Huang}, Yuan-Ming Li, Zhi-Wei Xia, Yu-Ming Tang, Kun-Yu Lin, Jian-Fang Hu, Wei-Shi Zheng}
   {\venue{CVPR 2025}{- Proceedings of the Computer Vision and Pattern Recognition Conference}}
   {Error detection in procedural activities is essential for AR-assisted and robotic systems, yet prior methods
@@ -128,7 +141,7 @@ embodied intelligence through rigorous, impactful research.
   {https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Modeling_Multiple_Normal_Action_Representations_for_Error_Detection_in_Procedural_CVPR_2025_paper.html}
 
 \pub
-  {3}{Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning}
+  {4}{Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning}
   {Zhi-Wei Xia, Kun-Yu Lin, Yuan-Ming Li, \me{Wei-Jin Huang}, Xian-Tuo Tan, Wei-Shi Zheng}
   {\venue{ICCV 2025}{- Proceedings of the IEEE/CVF International Conference on Computer Vision}}
   {Privacy-preserving action recognition aims to protect individual privacy in action videos without compromising
@@ -138,7 +151,7 @@ embodied intelligence through rigorous, impactful research.
   {https://openaccess.thecvf.com/content/ICCV2025/html/Xia_Less_Static_More_Private_Towards_Transferable_Privacy-Preserving_Action_Recognition_by_ICCV_2025_paper.html}
 
 \pub
-  {4}{EgoExo-Fitness: Towards Egocentric and Exocentric Full-Body Action Understanding}
+  {5}{EgoExo-Fitness: Towards Egocentric and Exocentric Full-Body Action Understanding}
   {Yuan-Ming Li, \me{Wei-Jin Huang (Co-First)}, An-Lan Wang, Ling-An Zeng, Jing-Ke Meng, Wei-Shi Zheng}
   {\venue{ECCV 2024}{- European Conference on Computer Vision}}
   {We present EgoExo-Fitness, a 32-hour full-body action understanding dataset of 1,276 cross-view fitness
