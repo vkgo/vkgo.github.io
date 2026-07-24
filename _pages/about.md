@@ -39,6 +39,7 @@ Feel free to reach out for research collaborations or academic discussions!
 
 {% assign edu = site.data.cv | where: 'title', 'Education' | first %}
 {% if edu %}
+
 <div class="card mt-3 p-3">
   {% assign entry = edu %}
   {% include cv/time_table.liquid %}

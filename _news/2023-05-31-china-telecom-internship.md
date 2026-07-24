@@ -7,4 +7,3 @@ related_posts: false
 ---
 
 Completed an internship at China Telecom — Tianyi Digital Life Technology as an Algorithm Engineer Intern.
-

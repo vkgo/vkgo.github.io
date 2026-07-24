@@ -7,4 +7,3 @@ related_posts: false
 ---
 
 Awarded Tencent Scholarship — First Class (1/66).
-

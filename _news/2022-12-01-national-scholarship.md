@@ -7,4 +7,3 @@ related_posts: false
 ---
 
 Awarded National Scholarship (1/66).
-

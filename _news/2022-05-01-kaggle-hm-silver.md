@@ -7,4 +7,3 @@ related_posts: false
 ---
 
 Kaggle competition result: H&M Personalized Fashion Recommendations — Silver (85/2952).
-

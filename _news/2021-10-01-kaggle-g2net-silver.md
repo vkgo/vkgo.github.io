@@ -7,4 +7,3 @@ related_posts: false
 ---
 
 Kaggle competition result: G2Net Gravitational Wave Detection — Silver (57/1219).
-
