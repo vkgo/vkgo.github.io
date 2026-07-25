@@ -91,8 +91,8 @@ body.page-home {
   grid-template-columns: minmax(170px, 190px) minmax(0, 1fr);
   gap: 5.25rem;
   align-items: start;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 
   a {
     color: var(--home-accent);
@@ -127,7 +127,7 @@ body.page-home {
 .home-profile__identity {
   h1 {
     margin: 0 0 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.25;
   }
@@ -135,7 +135,7 @@ body.page-home {
 
 .home-profile__meta {
   color: var(--global-text-color-light);
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   line-height: 1.55;
 
   p {
@@ -154,7 +154,7 @@ body.page-home {
     gap: 0.65rem;
     align-items: center;
     color: var(--global-text-color);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-decoration: none;
 
     i {
@@ -183,9 +183,11 @@ body.page-home {
 
 .reference-home__intro {
   scroll-margin-top: 5rem;
+  font-size: 1rem;
+  line-height: 1.65;
 
   p {
-    margin: 0 0 0.85rem;
+    margin: 0 0 1rem;
   }
 }
 
@@ -200,7 +202,7 @@ body.page-home {
     margin: 0 0 0.55rem;
     padding-bottom: 0.45rem;
     border-bottom: 1px solid var(--home-rule);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.25;
 
@@ -253,6 +255,7 @@ body.page-home {
     }
 
     td {
+      font-size: 0.875rem;
       line-height: 1.5;
     }
 
@@ -263,7 +266,7 @@ body.page-home {
       border-radius: 4px;
       background: var(--home-accent-soft);
       color: var(--home-accent);
-      font-size: 0.7rem;
+      font-size: 0.8125rem;
       font-weight: 700;
       text-align: center;
     }
@@ -325,7 +328,7 @@ body.page-home {
 
         .title {
           margin-bottom: 0.15rem;
-          font-size: 0.83rem;
+          font-size: 0.9375rem;
           line-height: 1.4;
           overflow-wrap: anywhere;
         }
@@ -333,14 +336,14 @@ body.page-home {
         .author {
           margin-bottom: 0.12rem;
           color: var(--global-text-color-light);
-          font-size: 0.72rem;
+          font-size: 0.875rem;
           line-height: 1.45;
           overflow-wrap: anywhere;
         }
 
         .periodical {
           color: var(--global-text-color-light);
-          font-size: 0.7rem;
+          font-size: 0.8125rem;
           line-height: 1.4;
           overflow-wrap: anywhere;
         }
@@ -353,7 +356,7 @@ body.page-home {
             border: 0;
             border-radius: 4px;
             background: var(--home-accent);
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             letter-spacing: 0.02em;
             text-shadow: none;
           }
@@ -367,7 +370,7 @@ body.page-home {
             border: 1px solid var(--home-accent);
             border-radius: 4px;
             color: var(--home-accent);
-            font-size: 0.7rem;
+            font-size: 0.78rem;
 
             &:hover,
             &:focus {
@@ -408,13 +411,13 @@ body.page-home {
   span {
     flex: 0 0 auto;
     color: var(--global-text-color-light);
-    font-size: 0.8rem;
+    font-size: 0.8125rem;
   }
 }
 
 .home-education__degree {
   color: var(--global-text-color-light);
-  font-size: 0.88rem;
+  font-size: 0.875rem;
 }
 
 html[data-theme="dark"] {
@@ -435,7 +438,7 @@ html[data-theme="dark"] {
   .reference-home {
     grid-template-columns: 1fr;
     gap: 1.4rem;
-    font-size: 0.9rem;
+    font-size: 0.9375rem;
   }
 
   .reference-home__sidebar {
@@ -463,12 +466,12 @@ html[data-theme="dark"] {
   .home-profile__identity {
     h1 {
       margin-bottom: 0.25rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 
   .home-profile__meta {
-    font-size: 0.76rem;
+    font-size: 0.8125rem;
 
     p:last-child {
       display: none;
@@ -484,7 +487,7 @@ html[data-theme="dark"] {
 
     a {
       gap: 0.3rem;
-      font-size: 0.75rem;
+      font-size: 0.8125rem;
 
       i {
         width: auto;
@@ -501,7 +504,7 @@ html[data-theme="dark"] {
     margin-top: 1.25rem;
 
     > h2 {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -528,7 +531,7 @@ html[data-theme="dark"] {
         min-width: 76px;
         padding-right: 0.25rem;
         padding-left: 0.25rem;
-        font-size: 0.67rem;
+        font-size: 0.75rem;
       }
     }
 
@@ -553,13 +556,13 @@ html[data-theme="dark"] {
       }
 
       .title {
-        font-size: 0.84rem;
+        font-size: 0.9375rem;
         line-height: 1.35;
       }
 
       .author,
       .periodical {
-        font-size: 0.72rem;
+        font-size: 0.8125rem;
       }
 
       .publication-venue {
