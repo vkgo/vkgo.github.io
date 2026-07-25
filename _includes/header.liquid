@@ -56,6 +56,15 @@
             </a>
           </li>
 
+          {% if page.permalink == '/' %}
+            <li class="nav-item home-anchor">
+              <a class="nav-link" href="{{ '/#about-me' | relative_url }}">About Me</a>
+            </li>
+            <li class="nav-item home-anchor">
+              <a class="nav-link" href="{{ '/#news' | relative_url }}">News</a>
+            </li>
+          {% endif %}
+
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}

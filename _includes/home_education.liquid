@@ -1,0 +1,36 @@
+{% assign education = site.data.cv | where: 'title', 'Education' | first %}
+{% if education %}
+  <div class="home-education">
+    {% for item in education.contents %}
+      <div class="home-education__item">
+        <div class="home-education__heading">
+          <strong>{{ item.institution }}</strong>
+          {% if item.year -%}
+            <span>{{ item.year }}</span>
+          {%- endif %}
+        </div>
+        {% if item.title %}
+          <div class="home-education__degree">{{ item.title }}</div>
+        {% endif %}
+        {% if item.description %}
+          <ul>
+            {% for detail in item.description %}
+              {% if detail.contents %}
+                <li>
+                  <span>{{ detail.title }}</span>
+                  <ul>
+                    {% for subitem in detail.contents %}
+                      <li>{{ subitem }}</li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li>{{ detail }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

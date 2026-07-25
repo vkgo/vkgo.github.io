@@ -1,0 +1,61 @@
+<div class="home-profile">
+  {% if page.profile.image %}
+    {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+    {% capture profile_image_alt %}{{ site.first_name }}{% if site.middle_name != blank %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+    <div class="home-profile__image">
+      {%
+        include figure.liquid
+        loading="eager"
+        path=profile_image_path
+        sizes="180px"
+        class="img-fluid"
+        alt=profile_image_alt
+        cache_bust=true
+      %}
+    </div>
+  {% endif %}
+
+  <div class="home-profile__identity">
+    <h1>
+      {{ site.first_name }}
+      {% if site.middle_name != blank %}{{ site.middle_name }}{% endif %}
+      {{ site.last_name }}
+    </h1>
+    {% if page.profile.more_info %}
+      <div class="home-profile__meta">{{ page.profile.more_info }}</div>
+    {% endif %}
+  </div>
+
+  <nav class="home-profile__links" aria-label="Profile links">
+    {% if site.data.socials.email %}
+      <a href="mailto:{{ site.data.socials.email | encode_email }}">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <span>Email</span>
+      </a>
+    {% endif %}
+    {% if site.data.socials.scholar_userid %}
+      <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <span>Google Scholar</span>
+      </a>
+    {% endif %}
+    {% if site.data.socials.github_username %}
+      <a href="https://github.com/{{ site.data.socials.github_username }}">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span>GitHub</span>
+      </a>
+    {% endif %}
+    {% if site.data.socials.kaggle_id %}
+      <a href="https://www.kaggle.com/{{ site.data.socials.kaggle_id }}">
+        <i class="fa-brands fa-kaggle" aria-hidden="true"></i>
+        <span>Kaggle</span>
+      </a>
+    {% endif %}
+    {% if site.data.socials.custom_social.url %}
+      <a href="{{ site.data.socials.custom_social.url }}">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i>
+        <span>{{ site.data.socials.custom_social.title | default: 'Website' }}</span>
+      </a>
+    {% endif %}
+  </nav>
+</div>

@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: Homepage
 permalink: /
 subtitle: <a href='https://www.sysu.edu.cn/'>Sun Yat-sen University</a>. Ph.D. Student in Computer Science and Technology.
 
@@ -15,10 +15,11 @@ profile:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+education: true
 
 announcements:
   enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  scrollable: false
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
@@ -34,14 +35,3 @@ My research interests focus on humanoid learning, action recognition, and tempor
 Before starting my Ph.D., I was an undergraduate student at South China University of Technology studying Network Engineering. During my undergraduate studies, I was actively involved in algorithm competitions and research internships, gaining experience in computer vision and machine learning. I have received several honors, including the President Scholarship at Sun Yat-sen University, the National Scholarship, Kaggle Silver medals, and various competition prizes.
 
 Feel free to reach out for research collaborations or academic discussions!
-
-## Education
-
-{% assign edu = site.data.cv | where: 'title', 'Education' | first %}
-{% if edu %}
-
-<div class="card mt-3 p-3">
-  {% assign entry = edu %}
-  {% include cv/time_table.liquid %}
-</div>
-{% endif %}
