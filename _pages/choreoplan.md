@@ -1,10 +1,19 @@
 ---
 layout: page
 permalink: /ChoreoPlan/
-title: ChoreoPlan
-description: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance
+title: "ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance"
 nav: false
 _styles: >
+  .post-header {
+    display: none;
+  }
+  .paper-title {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+    margin-bottom: 1.4rem;
+  }
   .venue {
     text-align: center;
     font-weight: 600;
@@ -32,6 +41,11 @@ _styles: >
     margin-bottom: 2rem;
   }
 ---
+
+<h1 class="paper-title">
+  ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded<br class="d-none d-md-inline" />
+  Selection for Music-to-Humanoid Dance
+</h1>
 
 <div class="venue">
   ACM International Conference on Multimedia (ACM MM), 2026
