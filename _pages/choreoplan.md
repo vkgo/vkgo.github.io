@@ -68,7 +68,7 @@ upstream decisions that strongly affect this proxy gap: how temporal planning
 units are defined and how generated candidates are selected before execution.
 ChoreoPlan introduces beat-snapped, variable-length planning segments with
 hybrid discrete and continuous motion attributes, together with an
-*Embodied Selector* trained on offline rollouts of the fixed controller. The
+_Embodied Selector_ trained on offline rollouts of the fixed controller. The
 planner provides beat-aligned choreography guidance in humanoid token space,
 while the selector reranks candidates using predicted execution quality and
 semantic compatibility. Across AIST++- and FineDance-derived humanoid tracks in
