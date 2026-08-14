@@ -1,4 +1,4 @@
-% Wei-Jin Huang -- academic CV  (violet banner edition)
+% Wei-Jin Huang -- academic CV  (academic blue edition)
 % Build: xelatex wei_jin_huang_cv.tex
 \documentclass[10pt,a4paper]{article}
 
@@ -21,13 +21,14 @@
 ]
 
 % ---- palette ---------------------------------------------------------------
-\definecolor{ink}{HTML}{1F2430}      % body text
-\definecolor{muted}{HTML}{6B7280}    % secondary text
-\definecolor{primary}{HTML}{6D28D9}  % deep violet  (titles, name highlight)
-\definecolor{banner}{HTML}{5B21B6}   % banner background
-\definecolor{accent}{HTML}{DB2777}   % magenta      (dates, venues, bars)
-\definecolor{rule}{HTML}{E3DCF2}     % light violet rule
-\definecolor{bsub}{HTML}{E9D5FF}     % banner subtitle (violet-200)
+\definecolor{ink}{HTML}{1F2937}      % charcoal body text
+\definecolor{muted}{HTML}{667085}    % cool secondary gray
+\definecolor{primary}{HTML}{365A7C}  % low-saturation academic blue
+\definecolor{banner}{HTML}{2F4F6D}   % deep academic blue
+\definecolor{accent}{HTML}{365A7C}   % single restrained accent
+\definecolor{rule}{HTML}{D8DEE6}     % cool light gray rule
+\definecolor{soft}{HTML}{EEF3F7}     % pale blue surface
+\definecolor{bsub}{HTML}{DCE6EE}     % pale banner subtitle
 \color{ink}
 
 \hypersetup{colorlinks=true,urlcolor=primary,linkcolor=primary}
@@ -36,20 +37,20 @@
 \linespread{0.91}
 
 % ---- helpers ---------------------------------------------------------------
-% section heading: magenta bar + violet title + thin rule
+% section heading: restrained blue bar + title + cool-gray rule
 \newcommand{\cvsection}[1]{%
   \vspace{2pt}\par\noindent
   {\color{accent}\rule[-1pt]{3.2pt}{12pt}}\hspace{6pt}%
   {\bfseries\large\color{primary}#1}\par
   \vspace{2.5pt}{\color{rule}\hrule height 1pt}\vspace{3.5pt}}
 
-\newcommand{\dt}[1]{{\bfseries\color{accent}\footnotesize #1}}
-\newcommand{\me}[1]{{\bfseries\color{primary}#1}}        % highlight my name
-\newcommand{\venue}[2]{{\bfseries\color{accent}#1}\,{\color{muted}\footnotesize #2}}
+\newcommand{\dt}[1]{{\bfseries\color{muted}\footnotesize #1}}
+\newcommand{\me}[1]{{\bfseries\color{ink}#1}}            % emphasize without adding color
+\newcommand{\venue}[2]{{\bfseries\color{primary}#1}\,{\color{muted}\footnotesize #2}}
 
 % numbered badge for publications
 \newcommand{\badge}[1]{%
-  \tikz[baseline=(c.base)]{\node[fill=primary,text=white,rounded corners=2.5pt,
+  \tikz[baseline=(c.base)]{\node[fill=soft,text=primary,rounded corners=2.5pt,
     inner xsep=0pt,inner ysep=0pt,minimum width=1.45em,minimum height=1.45em,
     font=\bfseries\small](c){#1};}}
 
@@ -75,8 +76,8 @@
 
 % ============================ HEADER =======================================
 \begin{minipage}[b]{0.78\textwidth}
-  {\fontsize{25}{28}\selectfont\bfseries\color{primary} Wei-Jin Huang}\\[4pt]
-  {\bfseries\color{accent} Ph.D. Student}{\color{muted}, Computer Science and Technology}\\[1.5pt]
+  {\fontsize{25}{28}\selectfont\bfseries\color{ink} Wei-Jin Huang}\\[4pt]
+  {\bfseries\color{primary} Ph.D. Student}{\color{muted}, Computer Science and Technology}\\[1.5pt]
   {\color{muted} Sun Yat-sen University, Guangzhou, China}\\[5pt]
   {\footnotesize\color{primary}%
     \faEnvelope[regular]~\href{mailto:huangwj235@mail2.sysu.edu.cn}{huangwj235@mail2.sysu.edu.cn}\quad
@@ -116,7 +117,11 @@ embodied intelligence through rigorous, impactful research.
   {1}{ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance}
   {\me{Wei-Jin Huang}, Jianhong Fan, Hao Huang, Zhi-Wei Xia, Jun-Yi Deng, Yuan-Ming Li, Kun-Yu Lin, Wei-Shi Zheng}
   {\venue{ACM MM 2026}{- ACM International Conference on Multimedia}}
-  {}
+  {We address the gap between visually strong reference dances and motions that remain stable after humanoid
+   control. ChoreoPlan combines beat-snapped hybrid phrase planning with an Embodied Selector trained from
+   offline controller rollouts to favor executable, semantically aligned candidates. Across AIST++ and FineDance
+   tracks in IsaacGym and MuJoCo, it improves rollout success, tracking, and rhythmic and semantic retention,
+   with transfer to a Unitree G1.}
   {}
 
 \pub
@@ -165,14 +170,6 @@ embodied intelligence through rigorous, impactful research.
 {\bfseries\color{primary} Humanoid Learning:} embodied intelligence, whole-body control, imitation learning, human-humanoid
 interaction; {\bfseries\color{primary} Video Understanding:} action recognition, temporal action understanding, video
 representation learning
-
-% ============================ EXPERIENCE ===================================
-\cvsection{Experience}
-{\bfseries Algorithm Engineer Intern} -- China Telecom (Tianyi Digital Life Technology) \hfill \dt{2023.03 -- 2023.05}
-\begin{itemize}[leftmargin=1.2em,topsep=2pt,itemsep=1pt,parsep=0pt]
-  \item Adapted the BEiT-3 multimodal foundation model to a real-world scene-classification task, raising
-        accuracy from 93.1\% to 95.3\% via vision-language fine-tuning and task-specific data curation.
-\end{itemize}
 
 % ============================ HONORS =======================================
 \cvsection{Honors and Awards}
