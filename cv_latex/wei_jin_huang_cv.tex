@@ -34,7 +34,7 @@
 \hypersetup{colorlinks=true,urlcolor=primary,linkcolor=primary}
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
-\linespread{0.91}
+\linespread{0.90}
 
 % ---- helpers ---------------------------------------------------------------
 % section heading: restrained blue bar + title + cool-gray rule
@@ -42,11 +42,11 @@
   \vspace{2pt}\par\noindent
   {\color{accent}\rule[-1pt]{3.2pt}{12pt}}\hspace{6pt}%
   {\bfseries\large\color{primary}#1}\par
-  \vspace{2.5pt}{\color{rule}\hrule height 1pt}\vspace{3.5pt}}
+  \vspace{2.5pt}{\color{rule}\hrule height 1pt}\vspace{3pt}}
 
 \newcommand{\dt}[1]{{\bfseries\color{muted}\footnotesize #1}}
-\newcommand{\me}[1]{{\bfseries\color{ink}#1}}            % emphasize without adding color
-\newcommand{\venue}[2]{{\bfseries\color{primary}#1}\,{\color{muted}\footnotesize #2}}
+\newcommand{\me}[1]{{\bfseries\color{primary}#1}}        % distinguish my name from the paper title
+\newcommand{\venue}[1]{{\bfseries\color{primary}#1}}
 
 % numbered badge for publications
 \newcommand{\badge}[1]{%
@@ -69,7 +69,7 @@
     \if\relax\detokenize{#5}\relax\else
       \vspace{1pt}{\color{ink}{\bfseries\color{primary}Abstract:} #5}\par
     \fi
-  \end{minipage}\par\vspace{1.5pt}}
+  \end{minipage}\par\vspace{1pt}}
 
 \begin{document}
 \RaggedRight
@@ -104,6 +104,13 @@ whole-body human--humanoid interaction from human demonstrations and that unders
 actions in video. I have published as (co-)first author at CVPR, ICCV, ECCV, and ACM MM, and I aim to advance
 embodied intelligence through rigorous, impactful research.
 
+% ============================ OPPORTUNITIES ================================
+\cvsection{Internship / Collaboration Interests}
+Embodied interaction and continual learning are key challenges for general intelligence. I study cross-task robot policy
+generalization: understanding novel goals and composing learned skills for unseen tasks. I aim to combine
+Vision-Language-Action (VLA) models, World Action Models (WAMs), agentic planning, continual learning, and egocentric
+human data to improve compositional generalization, rapid adaptation, and failure recovery.
+
 % ============================ EDUCATION ====================================
 \cvsection{Education}
 {\bfseries Ph.D., Computer Science and Technology} -- Sun Yat-sen University (SYSU), Guangzhou, China \hfill \dt{2024.09 -- Present}\\
@@ -116,18 +123,17 @@ embodied intelligence through rigorous, impactful research.
 \pub
   {1}{ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance}
   {\me{Wei-Jin Huang}, Jianhong Fan, Hao Huang, Zhi-Wei Xia, Jun-Yi Deng, Yuan-Ming Li, Kun-Yu Lin, Wei-Shi Zheng}
-  {\venue{ACM MM 2026}{- ACM International Conference on Multimedia}}
-  {We address the gap between visually strong reference dances and motions that remain stable after humanoid
-   control. ChoreoPlan combines beat-snapped hybrid phrase planning with an Embodied Selector trained from
-   offline controller rollouts to favor executable, semantically aligned candidates. Across AIST++ and FineDance
-   tracks in IsaacGym and MuJoCo, it improves rollout success, tracking, and rhythmic and semantic retention,
-   with transfer to a Unitree G1.}
+  {\venue{ACM MM 2026}}
+  {ChoreoPlan bridges reference-dance quality and humanoid executability. It couples beat-snapped hybrid phrase
+   planning with an Embodied Selector trained on offline controller rollouts to rank feasible, semantically aligned
+   motions. On AIST++ and FineDance in IsaacGym and MuJoCo, it improves rollout success, tracking, rhythm, and
+   semantics, with transfer to a Unitree G1.}
   {}
 
 \pub
   {2}{Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations}
   {\me{Wei-Jin Huang}, Yue-Yi Zhang, Yi-Lin Wei, Zhi-Wei Xia, Juantao Tan, Yuan-Ming Li, Zhilin Zhao, Wei-Shi Zheng}
-  {\venue{CVPR 2026}{- Proceedings of the Computer Vision and Pattern Recognition Conference}}
+  {\venue{CVPR 2026}}
   {Physical human-humanoid interaction is hindered by scarce high-quality data. We leverage abundant human-human
    data via PAIR, a contact-preserving retargeting pipeline, and D-STAR, a hierarchical interaction policy that
    attains a state-of-the-art 75.4\% average success rate across six interactive tasks and transfers to a real
@@ -137,7 +143,7 @@ embodied intelligence through rigorous, impactful research.
 \pub
   {3}{Modeling Multiple Normal Action Representations for Error Detection in Procedural Tasks}
   {\me{Wei-Jin Huang}, Yuan-Ming Li, Zhi-Wei Xia, Yu-Ming Tang, Kun-Yu Lin, Jian-Fang Hu, Wei-Shi Zheng}
-  {\venue{CVPR 2025}{- Proceedings of the Computer Vision and Pattern Recognition Conference}}
+  {\venue{CVPR 2025}}
   {Error detection in procedural activities is essential for AR-assisted and robotic systems, yet prior methods
    rely on temporal ordering or static prototypes of normal actions. We propose AMNAR, an Adaptive Multiple
    Normal Action Representation framework that predicts all valid next actions and reconstructs their normal
@@ -148,7 +154,7 @@ embodied intelligence through rigorous, impactful research.
 \pub
   {4}{Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning}
   {Zhi-Wei Xia, Kun-Yu Lin, Yuan-Ming Li, \me{Wei-Jin Huang}, Xian-Tuo Tan, Wei-Shi Zheng}
-  {\venue{ICCV 2025}{- Proceedings of the IEEE/CVF International Conference on Computer Vision}}
+  {\venue{ICCV 2025}}
   {Privacy-preserving action recognition aims to protect individual privacy in action videos without compromising
    recognition, but existing methods struggle under video domain shifts. We propose GenPriv, a transferable
    framework that decouples static and dynamic video features and removes privacy-sensitive content from static
@@ -158,18 +164,12 @@ embodied intelligence through rigorous, impactful research.
 \pub
   {5}{EgoExo-Fitness: Towards Egocentric and Exocentric Full-Body Action Understanding}
   {Yuan-Ming Li, \me{Wei-Jin Huang (Co-First)}, An-Lan Wang, Ling-An Zeng, Jing-Ke Meng, Wei-Shi Zheng}
-  {\venue{ECCV 2024}{- European Conference on Computer Vision}}
+  {\venue{ECCV 2024}}
   {We present EgoExo-Fitness, a 32-hour full-body action understanding dataset of 1,276 cross-view fitness
    sequences from 40 subjects, captured by six synchronized egocentric and exocentric cameras. It is richly
    annotated with two-level temporal boundaries, natural-language comments, and 1-5 action-quality scores,
    enabling fine-grained interpretable action analysis beyond existing datasets.}
   {https://doi.org/10.1007/978-3-031-72661-3_21}
-
-% ============================ INTERESTS ====================================
-\cvsection{Research Interests}
-{\bfseries\color{primary} Humanoid Learning:} embodied intelligence, whole-body control, imitation learning, human-humanoid
-interaction; {\bfseries\color{primary} Video Understanding:} action recognition, temporal action understanding, video
-representation learning
 
 % ============================ HONORS =======================================
 \cvsection{Honors and Awards}
