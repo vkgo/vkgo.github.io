@@ -859,25 +859,23 @@ distillation</strong> on HumanML3D without changing inference. Restoring the ful
 <h3>On SSAE, a VLM-judged semantic-alignment score, TACD scores highest.</h3>
 <div class="table-wrap narrow">
 <table class="ptable" aria-label="SSAE">
-  <thead><tr><th scope="col">Model</th><th scope="col">SSAE&nbsp;&uarr;</th><th scope="col" class="l"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord">Δ</span></span></span></span> vs. TACD [95% CI]</th></tr></thead>
+  <thead><tr><th scope="col">Model</th><th scope="col">SSAE&nbsp;&uarr;</th></tr></thead>
   <tbody>
-  <tr><td>HY-Motion teacher @50</td><td>.695</td><td class="l">&minus;.025 <span class="ci">[&minus;.053, +.004]</span></td></tr>
-  <tr><td>HY-Motion Lite (released) @50</td><td>.692</td><td class="l">&minus;.028 <span class="ci">[&minus;.057, +.001]</span></td></tr>
-  <tr><td>Truncated teacher @8</td><td>.587</td><td class="l">&minus;.133 <span class="ci">[&minus;.166, &minus;.100]</span></td></tr>
-  <tr><td>Uncapped student @8</td><td>.650</td><td class="l">&minus;.070 <span class="ci">[&minus;.093, &minus;.045]</span></td></tr>
-  <tr><td>DMD port @8</td><td>.672</td><td class="l">&minus;.048 <span class="ci">[&minus;.071, &minus;.024]</span></td></tr>
-  <tr><td>Consistency port @8</td><td>.700</td><td class="l">&minus;.020 <span class="ci">[&minus;.044, +.006]</span></td></tr>
-  <tr><td>Reflow port @8</td><td>.590</td><td class="l">&minus;.130 <span class="ci">[&minus;.156, &minus;.102]</span></td></tr>
-  <tr class="ours"><td><b>TACD</b> @8</td><td><b>.720</b></td><td class="l">&ndash;</td></tr>
+  <tr><td>HY-Motion teacher @50</td><td>.695</td></tr>
+  <tr><td>HY-Motion Lite (released) @50</td><td>.692</td></tr>
+  <tr><td>Truncated teacher @8</td><td>.587</td></tr>
+  <tr><td>Uncapped student @8</td><td>.650</td></tr>
+  <tr><td>DMD port @8</td><td>.672</td></tr>
+  <tr><td>Consistency port @8</td><td>.700</td></tr>
+  <tr><td>Reflow port @8</td><td>.590</td></tr>
+  <tr class="ours"><td><b>TACD</b> @8</td><td><b>.720</b></td></tr>
   </tbody>
 </table>
 </div>
 <p class="note">SSAE: a VLM judge's yes-rate on questions about the
-prompted motion, on a fixed set of 640 prompts. <span class="nb"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord">Δ</span></span></span></span>:</span> difference from TACD, paired by prompt.</p>
-<p>TACD scores highest (.720): <span class="nb">.020&ndash;.028</span> above the 50-step teacher, the released Lite, and the
-Consistency port and <span class="nb">.05&ndash;.13</span> above the DMD, truncated-teacher, uncapped, and Reflow students. When every
-model, TACD included (.699), is rendered from joints on one skeleton, TACD leads seven of ten open-weight
-HumanML3D models by <span class="nb">.03&ndash;.11</span>, including the four-step MotionLCM and MLCT.</p>
+prompted motion, on a fixed set of 640 prompts.</p>
+<p>TACD scores highest (.720), above the 50-step teacher (.695), the released Lite (.692), and
+every other eight-step student (<span class="nb">.587&ndash;.700</span>).</p>
 </section>
 
 <section class="block" id="r-human">
@@ -960,25 +958,23 @@ and eight.</p>
 <p class="note">KIT-ML, MDM teacher. TACD rows: three-seed means after 10k updates.</p>
 <p><strong>Kimodo.</strong> At eight steps, TACD raises R@1 over the
 truncated teacher from 69.36% to 71.39% and lowers FID from .064 to .054, with the same ordering at four and two
-steps. At NFE 8, TACD (Kimodo) with a 1B text encoder keeps R@3 and FID with 3.8&times; less memory.</p>
+steps.</p>
 <div class="table-wrap">
 <table class="ptable" aria-label="Kimodo teacher">
-  <thead><tr><th scope="col">Method</th><th scope="col" class="l">Encoder</th><th scope="col">NFE</th><th scope="col">R@1 (%)&nbsp;&uarr;</th><th scope="col">R@3 (%)&nbsp;&uarr;</th><th scope="col">FID&nbsp;&darr;</th><th scope="col">Time (s)&nbsp;&darr;</th><th scope="col">Memory (GB)&nbsp;&darr;</th></tr></thead>
+  <thead><tr><th scope="col">Method</th><th scope="col">NFE</th><th scope="col">R@1 (%)&nbsp;&uarr;</th><th scope="col">R@3 (%)&nbsp;&uarr;</th><th scope="col">FID&nbsp;&darr;</th><th scope="col">Time (s)&nbsp;&darr;</th></tr></thead>
   <tbody>
-  <tr><td>Teacher</td><td class="l">8B</td><td>100</td><td>73.15</td><td>88.63</td><td>0.045</td><td>2.96</td><td>15.3</td></tr>
-  <tr class="gap"><td>Truncated teacher</td><td class="l">8B</td><td>8</td><td>69.36</td><td>84.35</td><td>0.064</td><td>0.29</td><td>15.3</td></tr>
-  <tr class="ours"><td><b>TACD</b></td><td class="l">8B</td><td>8</td><td>71.39</td><td>86.55</td><td>0.054</td><td>0.29</td><td>15.3</td></tr>
-  <tr class="ours"><td><b>TACD</b> (Kimodo)</td><td class="l">1B</td><td>8</td><td>68.86</td><td>86.66</td><td>0.054</td><td>0.25</td><td>4.0</td></tr>
-  <tr class="gap"><td>Truncated teacher</td><td class="l">8B</td><td>4</td><td>67.05</td><td>82.37</td><td>0.079</td><td>0.18</td><td>15.3</td></tr>
-  <tr class="ours"><td><b>TACD</b></td><td class="l">8B</td><td>4</td><td>68.42</td><td>83.25</td><td>0.067</td><td>0.18</td><td>15.3</td></tr>
-  <tr class="ours"><td><b>TACD</b> (Kimodo)</td><td class="l">1B</td><td>4</td><td>67.00</td><td>82.98</td><td>0.066</td><td>0.13</td><td>4.0</td></tr>
-  <tr class="gap"><td>Truncated teacher</td><td class="l">8B</td><td>2</td><td>60.46</td><td>77.27</td><td>0.107</td><td>0.13</td><td>15.3</td></tr>
-  <tr class="ours"><td><b>TACD</b></td><td class="l">8B</td><td>2</td><td>62.36</td><td>79.57</td><td>0.095</td><td>0.13</td><td>15.3</td></tr>
+  <tr><td>Teacher</td><td>100</td><td>73.15</td><td>88.63</td><td>0.045</td><td>2.96</td></tr>
+  <tr class="gap"><td>Truncated teacher</td><td>8</td><td>69.36</td><td>84.35</td><td>0.064</td><td>0.29</td></tr>
+  <tr class="ours"><td><b>TACD</b></td><td>8</td><td>71.39</td><td>86.55</td><td>0.054</td><td>0.29</td></tr>
+  <tr class="gap"><td>Truncated teacher</td><td>4</td><td>67.05</td><td>82.37</td><td>0.079</td><td>0.18</td></tr>
+  <tr class="ours"><td><b>TACD</b></td><td>4</td><td>68.42</td><td>83.25</td><td>0.067</td><td>0.18</td></tr>
+  <tr class="gap"><td>Truncated teacher</td><td>2</td><td>60.46</td><td>77.27</td><td>0.107</td><td>0.13</td></tr>
+  <tr class="ours"><td><b>TACD</b></td><td>2</td><td>62.36</td><td>79.57</td><td>0.095</td><td>0.13</td></tr>
   </tbody>
 </table>
 </div>
-<p class="note">Kimodo teacher, 607-caption TMR evaluation. Time
-and memory: end to end, one RTX L40.</p>
+<p class="note">Kimodo teacher, 607-caption TMR evaluation; TACD keeps the
+teacher's 8B text encoder. Time: end to end, one RTX L40.</p>
 </section>
 
 <section class="block" id="r-efficiency">
@@ -1008,16 +1004,15 @@ faster end to end and use <span class="nb">3.8&ndash;6.7&times;</span> less peak
 <section id="humanoid" hidden></section>
 
 <h2 id="models">Models</h2>
-<p>The TACD students of the paper. Each is trained from a frozen teacher and text prompts, with
-teacher supervision and no real-motion targets. None of them is publicly available yet: the HY-Motion student is
-being prepared for release, and the others are results reported in the paper.</p>
+<p>The TACD student we release. It is trained from the frozen HY-Motion teacher and text
+prompts, with teacher supervision and no real-motion targets.</p>
 <div class="table-wrap wide">
-<table class="ptable models" aria-label="TACD students">
+<table class="ptable models" aria-label="TACD student">
   <thead><tr><th scope="col">Student</th><th scope="col" class="l">Teacher</th><th scope="col" class="l">Benchmark</th><th scope="col">Steps</th><th scope="col" class="l">Main result</th></tr></thead>
   <tbody>
   <tr class="ours"><td><span class="name"><b>TACD (HY-Motion)</b> <span class="chip soon">coming soon</span></span><span class="desc">0.46B Lite backbone, Qwen3-0.6B encoder</span></td><td class="l" data-label="Teacher">HY-Motion, 50&nbsp;steps</td><td class="l" data-label="Benchmark">HumanML3D</td><td data-label="Steps">8</td><td class="l" data-label="Main result">FID 1.041 &middot; R@3 .782</td></tr>
   <tr class="detail"><td colspan="5"><div class="detail-in">
-    <p class="note">Loading interface planned for the release; the checkpoint is not public yet.</p>
+    <p class="note">Loading with Hugging Face Transformers, once released:</p>
 <pre class="load"><code>import torch
 from transformers import AutoModel
 
@@ -1031,16 +1026,10 @@ out.joints   # (1, 120, 22, 3) joint positions at 30 fps</code></pre>
     <p class="note">Release candidate: one of the three training seeds,
     with FID 1.0085, R@3 0.7829 and MM-Dist 3.1811 on HumanML3D; the row above is the three-seed mean.</p>
   </div></td></tr>
-  <tr><td><span class="name"><b>TACD</b> <span class="chip">paper result</span></span><span class="desc">endpoint-matching form</span></td><td class="l" data-label="Teacher">MLD, 50&nbsp;steps</td><td class="l" data-label="Benchmark">HumanML3D</td><td data-label="Steps">4</td><td class="l" data-label="Main result">FID .222 &middot; R@3 .818</td></tr>
-  <tr><td><span class="name"><b>TACD</b> <span class="chip">paper result</span></span><span class="desc">endpoint-matching form</span></td><td class="l" data-label="Teacher">MotionLCM-V2 teacher, 50&nbsp;steps</td><td class="l" data-label="Benchmark">HumanML3D</td><td data-label="Steps">4</td><td class="l" data-label="Main result">FID .055 &middot; R@3 .824</td></tr>
-  <tr><td><span class="name"><b>TACD</b> <span class="chip">paper result</span></span><span class="desc">endpoint-matching form; also at two and four steps</span></td><td class="l" data-label="Teacher">MDM, 1000&nbsp;steps</td><td class="l" data-label="Benchmark">KIT-ML</td><td data-label="Steps">8</td><td class="l" data-label="Main result">FID .649 &middot; R@3 .763</td></tr>
-  <tr><td><span class="name"><b>TACD</b> <span class="chip">paper result</span></span><span class="desc">endpoint-matching form, teacher's 8B encoder; also at four and two steps</span></td><td class="l" data-label="Teacher">Kimodo, 100&nbsp;steps</td><td class="l" data-label="Benchmark">Kimodo, 607&nbsp;captions</td><td data-label="Steps">8</td><td class="l" data-label="Main result">FID 0.054 &middot; R@1 71.39%</td></tr>
-  <tr><td><span class="name"><b>TACD (Kimodo)</b> <span class="chip">paper result</span></span><span class="desc">trained-in 1B encoder; also at four steps</span></td><td class="l" data-label="Teacher">Kimodo, 100&nbsp;steps</td><td class="l" data-label="Benchmark">Kimodo, 607&nbsp;captions</td><td data-label="Steps">8</td><td class="l" data-label="Main result">FID 0.054 &middot; R@1 68.86%</td></tr>
   </tbody>
 </table>
 </div>
-<p class="note">HumanML3D and KIT-ML: Guo evaluators, 20 repetitions; Kimodo: TMR
-evaluation.</p>
+<p class="note">HumanML3D: Guo evaluator, 20 repetitions.</p>
 
 <h2 id="bibtex">BibTeX</h2>
 <div class="wide bibbox"><pre class="bib"><code>@article{huang2026tacd,
