@@ -453,6 +453,17 @@ table.ptable { border-collapse: collapse; width: 100%; font-size: 14.5px; line-h
   .authors .affils { line-height: 22px; margin-top: 8px; }
   .authors .affils span { display: block; white-space: normal; }
 }
+
+/* v8 (2026-10-05): the paper is public, so the Paper button is a live link; Code and Model stay "coming soon" */
+a.btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+a.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* v8: humanoid clips, two 640 x 640 panels each (generated motion | humanoid), two to a row on the wide column and one
+   on phones; the whole frame is shown (no caption strip to crop, unlike the Samples clips) */
+.hsamples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hclip video { aspect-ratio: 1280 / 640; object-fit: contain; object-position: 50% 50%; }
+.hcredit { margin-top: 18px; }
+@media (max-width: 560px) { .hsamples { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -470,7 +481,7 @@ table.ptable { border-collapse: collapse; width: 100%; font-size: 14.5px; line-h
     <p class="corr"><sup>&dagger;</sup>Corresponding author</p>
   </div>
   <nav class="links" aria-label="Paper, code and model">
-    <span class="btn is-soon" aria-disabled="true">Paper <span class="soon">coming soon</span></span>
+    <a class="btn" href="https://arxiv.org/abs/2610.02867">Paper (arXiv)</a>
     <span class="btn is-soon" aria-disabled="true">Code <span class="soon">coming soon</span></span>
     <span class="btn is-soon" aria-disabled="true">Model (Hugging Face) <span class="soon">coming soon</span></span>
   </nav>
@@ -485,7 +496,8 @@ table.ptable { border-collapse: collapse; width: 100%; font-size: 14.5px; line-h
 <p><strong>TL;DR.</strong> We distill large text-to-motion teachers into few-step students
 from prompts alone (no real motion data). On a fixed supervision grid, velocity matching repeatedly
 overweights errors near the end of denoising; TACD bounds that weight by tying the latest
-teacher query to the student's step size, without changing inference.</p>
+teacher query to the student's step size, without changing inference. The student's motions
+also drive a humanoid robot (<a href="#humanoid">see the demo</a>).</p>
 </section>
 
 <figure>
@@ -498,6 +510,7 @@ teacher query to the student's step size, without changing inference.</p>
   <ol class="toc-list" id="toc-list">
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#samples">Samples</a></li>
+    <li><a href="#humanoid">Humanoid</a></li>
     <li><a href="#method">Method</a>
       <ol>
         <li><a href="#m-onpolicy">On-policy distillation</a></li>
@@ -517,7 +530,6 @@ teacher query to the student's step size, without changing inference.</p>
         <li><a href="#r-efficiency">Efficiency</a></li>
       </ol>
     </li>
-    <!-- <li><a href="#humanoid">Humanoid</a></li> -->
     <li><a href="#models">Models</a></li>
     <li><a href="#bibtex">BibTeX</a></li>
   </ol>
@@ -553,6 +565,24 @@ relative to their teachers.</p>
   <figure class="clip"><div class="media"><video src="videos/09_gs00039.mp4" poster="assets/poster_09_gs00039.jpg" width="960" height="702" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person standing upright is energetically performing <span class="nb">hip-hop</span> dance</figcaption></figure>
   <figure class="clip"><div class="media"><video src="videos/10_ex026.mp4" poster="assets/poster_10_ex026.jpg" width="960" height="702" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person paddles a kayak alternating left and right</figcaption></figure>
 </div>
+
+<h2 id="humanoid">Humanoid control</h2>
+<p>TACD motions drive a Unitree G1 humanoid: each generated motion is retargeted with UMR and executed by the
+GEAR-SONIC whole-body controller.</p>
+<div class="samples hsamples wide">
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/kick.mp4" poster="assets/humanoid/kick.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person kicks forward with the right leg</figcaption></figure>
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/wave.mp4" poster="assets/humanoid/wave.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person waves hello with the right hand</figcaption></figure>
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/bow.mp4" poster="assets/humanoid/bow.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person bows forward and stands back up</figcaption></figure>
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/punch.mp4" poster="assets/humanoid/punch.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person punches forward with the left fist and then the right fist</figcaption></figure>
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/clap.mp4" poster="assets/humanoid/clap.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person claps their hands in front of the chest</figcaption></figure>
+  <figure class="clip hclip"><div class="media"><video src="videos/humanoid/sidestep.mp4" poster="assets/humanoid/sidestep.jpg" width="1280" height="640" controls muted loop playsinline preload="metadata"></video></div><figcaption>A person steps to the left and then steps to the right</figcaption></figure>
+</div>
+<p class="note hcredit">Human motions are generated by the TACD student distilled from Tencent HY-Motion 1.0 and
+shown on the HY-Motion WoodenMesh character; the HY-Motion licence notice is at the foot of this page. Humanoid:
+Unitree G1 model description &copy; Unitree Robotics (BSD-3-Clause). Motions are retargeted with
+<a href="https://github.com/hanyang9/UMR">UMR</a> (MIT License) and executed by the
+<a href="https://nvlabs.github.io/GEAR-SONIC/">GEAR-SONIC</a> whole-body controller, licensed by NVIDIA Corporation
+under the NVIDIA Open Model License. No endorsement by Tencent, NVIDIA or Unitree is implied.</p>
 
 <h2 id="method">Method</h2>
 <p>TACD is a supervision design for segmented on-policy distillation. In each denoising segment the
@@ -999,10 +1029,6 @@ faster end to end and use <span class="nb">3.8&ndash;6.7&times;</span> less peak
 </div>
 </section>
 
-<!-- Slot for the humanoid section (after Results, before Models). Empty and hidden on purpose; when it is
-     written, remove "hidden" and un-comment its entry in the contents list. -->
-<section id="humanoid" hidden></section>
-
 <h2 id="models">Models</h2>
 <p>The TACD student we release. It is trained from the frozen HY-Motion teacher and text
 prompts, with teacher supervision and no real-motion targets.</p>
@@ -1036,7 +1062,7 @@ out.joints   # (1, 120, 22, 3) joint positions at 30 fps</code></pre>
   title   = {TACD: Distilling Efficient Text-to-Motion Models via Terminal Amplification Control},
   author  = {Huang, Wei-Jin and Li, Yuan-Ming and Lin, Kun-Yu and Luo, Wang and Zhu, Yinlin and
              Yu, Yue and Ye, Shenghao and Yuan, Junbin and Hong, Fa-Ting and Zhang, Qing and Zheng, Wei-Shi},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2610.02867},
   year    = {2026}
 }</code></pre></div>
 
