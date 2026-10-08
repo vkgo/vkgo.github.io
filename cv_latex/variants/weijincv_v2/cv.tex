@@ -65,15 +65,16 @@
   \begin{minipage}[c]{0.12\linewidth}
     \includegraphics[width=1.9cm]{figs/logo-sysu.png}
   \end{minipage}%
-  \begin{minipage}[c]{0.74\linewidth}
+  \begin{minipage}[c]{0.76\linewidth}
     \centering
-    {\LARGE\bfseries 黄韦锦}\\[3pt]
-    {\normalsize 博士研究生\quad 计算机科学与技术\quad | \quad 中山大学\quad 广东广州}\\[3pt]
-    \small
-    \faEnvelope\ \href{mailto:huangwj235@mail2.sysu.edu.cn}{huangwj235@mail2.sysu.edu.cn}\quad
-    \faGlobe\ \href{https://vkgo.github.io/}{vkgo.github.io}\quad
-    \faGraduationCap\ \href{https://scholar.google.com/citations?user=jMrU_JYAAAAJ}{Google Scholar}\quad
-    \faGithub\ \href{https://github.com/vkgo}{github.com/vkgo}
+    {\fontsize{20}{24}\selectfont\bfseries 黄韦锦}\\[5pt]
+    {\fontsize{10.5}{13}\selectfont 博士研究生\quad 计算机科学与技术\quad | \quad 中山大学\quad 广东广州}\\[5pt]
+    \fontsize{10.5}{13}\selectfont
+    \faEnvelope\ \href{mailto:huangwj235@mail2.sysu.edu.cn}{huangwj235@mail2.sysu.edu.cn}\hspace{2.4em}%
+    \faPhone\ \href{tel:+8615089630115}{+86-15089630115}\\[5pt]
+    \faGlobe\ \href{https://vkgo.github.io/}{vkgo.github.io}\hspace{2.4em}%
+    \faGithub\ \href{https://github.com/vkgo}{github.com/vkgo}\hspace{2.4em}%
+    \faGraduationCap\ \href{https://scholar.google.com/citations?user=jMrU_JYAAAAJ}{Google Scholar}
   \end{minipage}%
   \begin{minipage}[c]{0.12\linewidth}
     \hfill\includegraphics[width=1.9cm]{figs/photo.jpg}
@@ -139,10 +140,10 @@
   {https://doi.org/10.1007/978-3-031-72661-3_21}
 
 \paper
-  {Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning}
-  {Zhi-Wei Xia, Kun-Yu Lin, Yuan-Ming Li, \textcolor{black}{\textbf{Wei-Jin Huang}}, Xian-Tuo Tan, Wei-Shi Zheng}
-  {IEEE/CVF International Conference on Computer Vision (ICCV 2025)}
-  {\textbf{概述}：隐私保护动作识别在视频域变化下往往泛化不足，而隐私敏感信息主要来自静态人物外观。训练时结合有标签源域视频与无标签目标域视频，目标是在目标域兼顾隐私保护与动作识别。GenPriv 基于这一观察，以生成式 ST-VAE 解耦静态/动态表征并从静态特征中去除隐私信息；同时以互信息损失降低两类特征的依赖，空间一致性约束稳定静态表征，时间对齐约束获得跨域一致的动态特征，从而保留可迁移的动作表征。}
-  {https://openaccess.thecvf.com/content/ICCV2025/html/Xia_Less_Static_More_Private_Towards_Transferable_Privacy-Preserving_Action_Recognition_by_ICCV_2025_paper.html}
+  {TACD: Distilling Efficient Text-to-Motion Models via Terminal Amplification Control}
+  {\textcolor{black}{\textbf{Wei-Jin Huang}}, Yuan-Ming Li, Kun-Yu Lin, Wang Luo, Yinlin Zhu, Yue Yu, Shenghao Ye, Junbin Yuan, Fa-Ting Hong, Qing Zhang, Wei-Shi Zheng}
+  {arXiv 预印本，2026 · arXiv:2610.02867}
+  {\textbf{概述}：针对文本到动作生成的多步采样开销，以及少步蒸馏中去噪末端误差被过度加权的问题，提出终端放大控制蒸馏（TACD），将教师查询时刻与学生步长关联，约束末端损失权重，仅利用文本提示和教师监督训练少步生成模型。在 HumanML3D 上，8 步 HY-Motion 学生相较未施加该约束的蒸馏基线，FID 降低 58\%；结合轻量骨干与文本编码器，端到端推理提速 7.7 倍，峰值显存从 17.63 GB 降至 2.62 GB。生成动作经重定向与全身控制器在 Unitree G1 上执行。}
+  {https://vkgo.github.io/TACD/}
 
 \end{document}

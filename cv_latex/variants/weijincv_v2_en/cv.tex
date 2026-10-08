@@ -71,15 +71,16 @@
   \begin{minipage}[c]{0.12\linewidth}
     \includegraphics[width=1.9cm]{figs/logo-sysu.png}
   \end{minipage}%
-  \begin{minipage}[c]{0.74\linewidth}
+  \begin{minipage}[c]{0.76\linewidth}
     \centering
-    {\LARGE\bfseries Wei-Jin Huang}\\[3pt]
-    {\footnotesize Ph.D. Student in Computer Science and Technology\quad | \quad Sun Yat-sen University\quad Guangzhou, China}\\[3pt]
-    \small
-    \faEnvelope\ \href{mailto:huangwj235@mail2.sysu.edu.cn}{huangwj235@mail2.sysu.edu.cn}\quad
-    \faGlobe\ \href{https://vkgo.github.io/}{vkgo.github.io}\quad
-    \faGraduationCap\ \href{https://scholar.google.com/citations?user=jMrU_JYAAAAJ}{Google Scholar}\quad
-    \faGithub\ \href{https://github.com/vkgo}{github.com/vkgo}
+    {\fontsize{20}{24}\selectfont\bfseries Wei-Jin Huang}\\[5pt]
+    {\small Ph.D. Student\enspace · \enspace Computer Science\enspace · \enspace Sun Yat-sen University\enspace · \enspace Guangzhou, China}\\[5pt]
+    \fontsize{10.5}{13}\selectfont
+    \faEnvelope\ \href{mailto:huangwj235@mail2.sysu.edu.cn}{huangwj235@mail2.sysu.edu.cn}\hspace{2.4em}%
+    \faPhone\ \href{tel:+8615089630115}{+86-15089630115}\\[5pt]
+    \faGlobe\ \href{https://vkgo.github.io/}{vkgo.github.io}\hspace{2.4em}%
+    \faGithub\ \href{https://github.com/vkgo}{github.com/vkgo}\hspace{2.4em}%
+    \faGraduationCap\ \href{https://scholar.google.com/citations?user=jMrU_JYAAAAJ}{Google Scholar}
   \end{minipage}%
   \begin{minipage}[c]{0.12\linewidth}
     \hfill\includegraphics[width=1.9cm]{figs/photo.jpg}
@@ -145,10 +146,10 @@
   {https://doi.org/10.1007/978-3-031-72661-3_21}
 
 \paper
-  {Less Static, More Private: Towards Transferable Privacy-Preserving Action Recognition by Generative Decoupled Learning}
-  {Zhi-Wei Xia, Kun-Yu Lin, Yuan-Ming Li, \textcolor{black}{\textbf{Wei-Jin Huang}}, Xian-Tuo Tan, Wei-Shi Zheng}
-  {IEEE/CVF International Conference on Computer Vision (ICCV 2025)}
-  {\textbf{Overview:} Privacy-preserving action recognition transfers poorly across domains; privacy mainly lies in static appearance. GenPriv uses labeled source and unlabeled target videos with a generative ST-VAE to separate static/dynamic features and remove privacy from static ones. Mutual-information minimization decouples them; spatial consistency stabilizes static representations, and temporal alignment learns domain-consistent motion---preserving transferable action features.}
-  {https://openaccess.thecvf.com/content/ICCV2025/html/Xia_Less_Static_More_Private_Towards_Transferable_Privacy-Preserving_Action_Recognition_by_ICCV_2025_paper.html}
+  {TACD: Distilling Efficient Text-to-Motion Models via Terminal Amplification Control}
+  {\textcolor{black}{\textbf{Wei-Jin Huang}}, Yuan-Ming Li, Kun-Yu Lin, Wang Luo, Yinlin Zhu, Yue Yu, Shenghao Ye, Junbin Yuan, Fa-Ting Hong, Qing Zhang, Wei-Shi Zheng}
+  {arXiv preprint, 2026 · arXiv:2610.02867}
+  {\textbf{Overview:} TACD accelerates text-to-motion generation by tying teacher query times to student step size, bounding excessive endpoint loss weights during few-step distillation. Training uses only text prompts and teacher supervision. On HumanML3D, the eight-step HY-Motion student reduces FID by 58\% versus distillation without this bound. With a compact backbone and text encoder, it achieves a 7.7$\times$ end-to-end speedup and reduces peak GPU memory from 17.63 to 2.62 GB. Retargeted motions execute on a Unitree G1 via whole-body control.}
+  {https://vkgo.github.io/TACD/}
 
 \end{document}
