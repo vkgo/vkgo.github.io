@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Download the latest PDF resume.",
+          description: "Download my CV in English or Chinese (PDF).",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -80,6 +80,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-our-paper-tacd-distilling-efficient-text-to-motion-models-via-terminal-amplification-control-is-on-arxiv-with-a-project-page-code-and-model",
           title: 'Our paper “TACD: Distilling Efficient Text-to-Motion Models via Terminal Amplification Control” is on...',
+          description: "",
+          section: "News",},{id: "news-i-was-selected-for-the-2026-cast-young-science-and-technology-talent-cultivation-program-doctoral-student-special-plan-supported-by-the-china-society-of-image-and-graphics-csig-announcement",
+          title: 'I was selected for the 2026 CAST Young Science and Technology Talent Cultivation...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
