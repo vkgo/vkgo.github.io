@@ -13,22 +13,22 @@
           <div class="home-education__degree">{{ item.title }}</div>
         {% endif %}
         {% if item.description %}
-          <ul>
+          <div class="home-education__details">
             {% for detail in item.description %}
               {% if detail.contents %}
-                <li>
-                  <span>{{ detail.title }}</span>
-                  <ul>
+                <div>
+                  <div class="home-education__label">{{ detail.title }}</div>
+                  <ul class="home-education__topics">
                     {% for subitem in detail.contents %}
-                      <li>{{ subitem }}</li>
+                      <li>{{ subitem | emojify }}</li>
                     {% endfor %}
                   </ul>
-                </li>
+                </div>
               {% else %}
-                <li>{{ detail }}</li>
+                <div>{{ detail }}</div>
               {% endif %}
             {% endfor %}
-          </ul>
+          </div>
         {% endif %}
       </div>
     {% endfor %}
