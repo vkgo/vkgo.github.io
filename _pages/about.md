@@ -6,7 +6,7 @@ subtitle: <a href='https://www.sysu.edu.cn/'>Sun Yat-sen University</a>. Ph.D. S
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile-life.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Ph.D. Student</p>
