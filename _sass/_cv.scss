@@ -183,6 +183,51 @@ span.badge-toc {
   inline-size: fit-content;
 }
 
+.cv-downloads {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.cv-download {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  color: var(--global-text-color);
+
+  > i:first-child {
+    color: var(--global-theme-color);
+    font-size: 1.75rem;
+  }
+
+  > i:last-child {
+    margin-left: auto;
+    color: var(--global-theme-color);
+  }
+
+  strong {
+    font-size: 1.1rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+.cv-download__detail {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+}
+
 ul.timeline li::before {
   content: "";
   min-height: 2.5rem;

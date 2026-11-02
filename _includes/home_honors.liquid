@@ -1,0 +1,15 @@
+{% assign honors = site.data.cv | where: 'title', 'Honors and Awards' | first %}
+<dl class="home-honors">
+  {% for entry in honors.contents %}
+    <div class="home-honors__year">
+      <dt>{{ entry.year }}</dt>
+      <dd>
+        <ul>
+          {% for item in entry.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </dd>
+    </div>
+  {% endfor %}
+</dl>

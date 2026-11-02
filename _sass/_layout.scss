@@ -384,6 +384,39 @@ body.page-home {
   }
 }
 
+.home-honors {
+  margin: 0;
+}
+
+.home-honors__year {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    color: var(--home-accent);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.15rem;
+  }
+
+  li + li {
+    margin-top: 0.25rem;
+  }
+}
+
 .home-education__item {
   padding: 0.65rem 0;
   border-bottom: 1px solid var(--global-divider-color);

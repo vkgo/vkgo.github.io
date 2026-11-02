@@ -32,6 +32,6 @@ I am currently a Ph.D. student at Sun Yat-sen University, specializing in Humano
 
 My research interests focus on humanoid learning, action recognition, and temporal video understanding. I am interested in building robust embodied and video understanding systems and aim to make meaningful contributions through sustained research.
 
-Before starting my Ph.D., I was an undergraduate student at South China University of Technology studying Network Engineering. During my undergraduate studies, I was actively involved in algorithm competitions and research internships, gaining experience in computer vision and machine learning. I have received several honors, including the President Scholarship at Sun Yat-sen University, the National Scholarship, Kaggle Silver medals, and various competition prizes.
+Before starting my Ph.D., I was an undergraduate student at South China University of Technology studying Network Engineering. During my undergraduate studies, I was actively involved in algorithm competitions and research internships, gaining experience in computer vision and machine learning.
 
 Feel free to reach out for research collaborations or academic discussions!
