@@ -1,0 +1,21 @@
+{% comment %}
+  Research-interest chips under the homepage intro.
+  Data lives in _data/cv.yml (Education > first entry with a nested `contents` list),
+  so the CV page and the homepage stay in sync.
+{% endcomment %}
+{% assign education = site.data.cv | where: 'title', 'Education' | first %}
+{% assign research_topics = null %}
+{% for item in education.contents %}
+  {% for detail in item.description %}
+    {% if detail.contents and research_topics == null %}
+      {% assign research_topics = detail.contents %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% if research_topics %}
+  <ul class="home-research" aria-label="Research interests">
+    {% for topic in research_topics %}
+      <li>{{ topic | emojify }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

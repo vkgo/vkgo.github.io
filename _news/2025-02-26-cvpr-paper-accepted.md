@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "Modeling Multiple Normal Action Representations for Error Detection in Procedural Tasks" was accepted to CVPR 2025.
+Our paper on [**error detection in procedural tasks**](https://arxiv.org/abs/2503.22405) was accepted to **CVPR 2025**.

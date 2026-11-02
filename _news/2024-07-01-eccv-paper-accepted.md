@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "EgoExo-Fitness: Towards Egocentric and Exocentric Full-Body Action Understanding" was accepted to ECCV 2024.
+Our paper [**EgoExo-Fitness**](https://arxiv.org/abs/2406.08877) was accepted to **ECCV 2024**.

@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "ChoreoPlan: Hybrid Phrase Planning and Execution-Grounded Selection for Music-to-Humanoid Dance" was accepted to ACM MM 2026.
+Our paper [**ChoreoPlan**]({{ '/ChoreoPlan/' | relative_url }}) was accepted to **ACM MM 2026**.

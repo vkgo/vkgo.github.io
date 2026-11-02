@@ -9,13 +9,15 @@ layout: default
   <main class="reference-home__main">
     <section id="about-me" class="reference-home__intro" aria-label="About me">
       {{ content }}
+      {% include home_research.liquid %}
     </section>
 
     {% if page.announcements and page.announcements.enabled %}
       <section id="news" class="reference-home__section">
         <h2>
           <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
-          <a href="{{ '/news/' | relative_url }}">News</a>
+          News
+          <a class="section-more" href="{{ '/news/' | relative_url }}">All news &rarr;</a>
         </h2>
         {% include news.liquid limit=true %}
       </section>
@@ -25,7 +27,8 @@ layout: default
       <section id="selected-publications" class="reference-home__section reference-home__publications">
         <h2>
           <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-          <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
+          Selected Publications
+          <a class="section-more" href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
         </h2>
         {% include selected_papers.liquid %}
       </section>

@@ -3,33 +3,26 @@
   <div class="home-education">
     {% for item in education.contents %}
       <div class="home-education__item">
-        <div class="home-education__heading">
-          <strong>{{ item.institution }}</strong>
-          {% if item.year -%}
-            <span>{{ item.year }}</span>
-          {%- endif %}
-        </div>
-        {% if item.title %}
-          <div class="home-education__degree">{{ item.title }}</div>
+        {% if item.logo %}
+          <img class="home-education__logo" src="{{ item.logo | relative_url }}" alt="" loading="lazy" width="44" height="44">
         {% endif %}
-        {% if item.description %}
-          <div class="home-education__details">
-            {% for detail in item.description %}
-              {% if detail.contents %}
-                <div>
-                  <div class="home-education__label">{{ detail.title }}</div>
-                  <ul class="home-education__topics">
-                    {% for subitem in detail.contents %}
-                      <li>{{ subitem | emojify }}</li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% else %}
-                <div>{{ detail }}</div>
-              {% endif %}
-            {% endfor %}
+        <div class="home-education__body">
+          <div class="home-education__heading">
+            <strong>{{ item.institution }}</strong>
+            {% if item.year -%}
+              <span>{{ item.year }}</span>
+            {%- endif %}
           </div>
-        {% endif %}
+          {% if item.title %}
+            <div class="home-education__degree">{{ item.title }}</div>
+          {% endif %}
+          {% comment %} Research-area lists render as chips under the intro (home_research.liquid). {% endcomment %}
+          {% for detail in item.description %}
+            {% unless detail.contents %}
+              <div class="home-education__note">{{ detail }}</div>
+            {% endunless %}
+          {% endfor %}
+        </div>
       </div>
     {% endfor %}
   </div>

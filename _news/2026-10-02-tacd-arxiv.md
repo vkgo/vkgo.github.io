@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "TACD: Distilling Efficient Text-to-Motion Models via Terminal Amplification Control" is on [arXiv](https://arxiv.org/abs/2610.02867), with a [project page](/TACD/), [code](https://github.com/vkgo/TACD) and [model](https://huggingface.co/weijinhuang/TACD-HY-Motion-Lite).
+Our paper **TACD** is on [arXiv](https://arxiv.org/abs/2610.02867), with a [project page]({{ '/TACD/' | relative_url }}), [code](https://github.com/vkgo/TACD) and [model](https://huggingface.co/weijinhuang/TACD-HY-Motion-Lite).
