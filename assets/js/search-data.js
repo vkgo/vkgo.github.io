@@ -28,18 +28,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-kaggle-competition-result-g2net-gravitational-wave-detection-silver-57-1219",
+            },},{id: "news-kaggle-competition-result-g2net-gravitational-wave-detection-silver-57-1219",
           title: 'Kaggle competition result: G2Net Gravitational Wave Detection — Silver (57/1219).',
           description: "",
           section: "News",},{id: "news-kaggle-competition-result-h-amp-amp-m-personalized-fashion-recommendations-silver-85-2952",
